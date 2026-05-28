@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics — SpendWise</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+</head>
+<body data-page="analytics">
+  <div id="app-shell"></div>
+  <main id="page-content">
+    <p class="page-intro">Charts and insights from your spending habits.</p>
+
+    <div class="stat-grid" style="margin-bottom: 1.25rem;">
+      <article class="stat-card">
+        <p class="stat-card__label">Top category</p>
+        <p class="stat-card__value" id="top-category" style="font-size: 1.1rem;">—</p>
+      </article>
+      <article class="stat-card stat-card--income">
+        <p class="stat-card__label">Savings rate</p>
+        <p class="stat-card__value" id="savings-rate">—</p>
+      </article>
+    </div>
+
+    <div class="panel-grid">
+      <section class="panel">
+        <h2>By category (this month)</h2>
+        <div class="chart-box">
+          <canvas id="pie-chart"></canvas>
+        </div>
+      </section>
+      <section class="panel">
+        <h2>Weekly expenses</h2>
+        <div class="chart-box">
+          <canvas id="weekly-chart"></canvas>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel">
+      <h2>Monthly trend (last 6 months)</h2>
+      <div class="chart-box chart-box--tall">
+        <canvas id="monthly-chart"></canvas>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Savings insights</h2>
+      <div id="insights-list"></div>
+    </section>
+  </main>
+  <script type="module" src="../js/pages/analytics.js"></script>
+</body>
+</html>

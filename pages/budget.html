@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget — SpendWise</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-page="budget">
+  <div id="app-shell"></div>
+  <main id="page-content">
+    <p class="page-intro">Set limits and track how much you've used this month.</p>
+
+    <div id="overall-alert" class="alert alert--warning hidden"></div>
+
+    <section class="panel">
+      <h2>Monthly spending limit</h2>
+      <div class="form-row form-row--inline">
+        <input type="number" id="monthly-limit" min="0" step="100" placeholder="e.g. 12000">
+        <button type="button" class="btn" id="save-monthly-btn">Save limit</button>
+      </div>
+      <div class="budget-row" id="overall-progress-wrap">
+        <div class="budget-row__head">
+          <span>Overall usage</span>
+          <span id="overall-progress-text">—</span>
+        </div>
+        <div class="budget-row__bar">
+          <div class="budget-row__fill" id="overall-progress-bar" style="width: 0%"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Category budgets</h2>
+      <div id="category-budget-form" class="budget-category-grid"></div>
+      <button type="button" class="btn" id="save-categories-btn" style="margin-top: 1rem;">Save category budgets</button>
+      <div id="category-progress-list" style="margin-top: 1.5rem;"></div>
+    </section>
+  </main>
+  <script type="module" src="../js/pages/budget-page.js"></script>
+</body>
+</html>

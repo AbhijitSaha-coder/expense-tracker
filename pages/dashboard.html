@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — SpendWise</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+</head>
+<body data-page="dashboard">
+  <div id="app-shell"></div>
+  <main id="page-content">
+    <p class="page-intro">Overview of your money this month.</p>
+
+    <div id="budget-alert" class="alert alert--warning hidden" role="alert">
+      Monthly budget exceeded — check the Budget page.
+    </div>
+
+    <section class="stat-grid" id="stat-skeleton"></section>
+    <section class="stat-grid hidden" id="stat-cards">
+      <article class="stat-card">
+        <p class="stat-card__label">Balance</p>
+        <p class="stat-card__value" id="stat-balance">—</p>
+      </article>
+      <article class="stat-card stat-card--income">
+        <p class="stat-card__label">Income</p>
+        <p class="stat-card__value" id="stat-income">—</p>
+      </article>
+      <article class="stat-card stat-card--expense">
+        <p class="stat-card__label">Expenses</p>
+        <p class="stat-card__value" id="stat-expense">—</p>
+      </article>
+      <article class="stat-card">
+        <p class="stat-card__label">This month</p>
+        <p class="stat-card__value" id="stat-monthly">—</p>
+      </article>
+    </section>
+
+    <div class="panel-grid panel-grid--3-2">
+      <section class="panel">
+        <h2>Expense breakdown</h2>
+        <div class="chart-box">
+          <canvas id="dash-chart"></canvas>
+        </div>
+        <p id="dash-chart-empty" class="list-empty-msg hidden">No expenses this month yet.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Recent transactions</h2>
+        <ul id="recent-list" class="recent-list"></ul>
+        <a href="transactions.html">View all →</a>
+      </section>
+    </div>
+
+    <section class="panel">
+      <h2>Recent activity</h2>
+      <ul id="activity-feed" class="activity-feed"></ul>
+    </section>
+  </main>
+  <script type="module" src="../js/pages/dashboard.js"></script>
+</body>
+</html>

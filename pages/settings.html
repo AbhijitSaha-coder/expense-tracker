@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings — SpendWise</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-page="settings">
+  <div id="app-shell"></div>
+  <main id="page-content">
+    <p class="page-intro">Profile and app preferences.</p>
+
+    <section class="panel">
+      <div class="profile-card">
+        <div class="profile-card__avatar" id="profile-avatar">A</div>
+        <div>
+          <h2 id="profile-name-display">—</h2>
+          <p id="profile-email-display" style="color: var(--text-muted); font-size: 0.9rem;">—</p>
+        </div>
+      </div>
+
+      <form id="profile-form">
+        <div class="form-row">
+          <label for="profile-name">Display name</label>
+          <input type="text" id="profile-name" maxlength="60">
+        </div>
+        <div class="form-row">
+          <label for="profile-email">Email</label>
+          <input type="email" id="profile-email">
+        </div>
+        <button type="submit" class="btn">Save profile</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Preferences</h2>
+      <div class="form-row">
+        <label for="currency-select">Currency</label>
+        <select id="currency-select">
+          <option value="INR">INR (₹)</option>
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Theme</label>
+        <button type="button" class="btn btn--secondary" id="theme-toggle">Toggle dark / light mode</button>
+      </div>
+    </section>
+
+    <section class="panel danger-zone">
+      <h3>Reset data</h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+        Deletes all transactions, budgets, and settings from this browser.
+      </p>
+      <button type="button" class="btn btn--danger" id="reset-data-btn">Reset everything</button>
+    </section>
+  </main>
+  <script type="module" src="../js/pages/settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — SpendWise</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body class="login-page">
+  <div class="login-card">
+    <div class="login-card__brand">
+      <span class="login-card__logo" aria-hidden="true">₹</span>
+      <h1>SpendWise</h1>
+      <p class="page-intro">Personal finance tracker (college project)</p>
+    </div>
+
+    <form id="login-form" novalidate>
+      <div class="form-row">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" placeholder="you@college.edu" required>
+        <span class="form-error" id="login-error"></span>
+      </div>
+      <div class="form-row">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" placeholder="any password works" required>
+      </div>
+      <button type="submit" class="btn btn--block" id="login-btn">Sign in</button>
+    </form>
+
+    <p class="login-hint">Demo login — no real server. Any email &amp; password works.</p>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+  <script type="module" src="../js/pages/login.js"></script>
+</body>
+</html>
